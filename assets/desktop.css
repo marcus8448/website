@@ -1,11 +1,5 @@
-/* width >=52em */
-body {
-  min-height: 70vh;
-  padding: 3rem 1rem;
-}
-
+/* width >=46em */
 .container {
-  width: 75%;
   max-width: 44rem;
   border-radius: 0.5rem;
 }

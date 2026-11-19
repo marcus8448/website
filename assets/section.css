@@ -9,13 +9,23 @@ article .icon {
 
 article:has(.icon) {
   min-height: 6rem; /*floating img size*/
+
+  @media screen and (max-width: 28em) {
+    min-height: 6rem;
+  }
 }
+
 article .icon img {
   width: 6rem;
   aspect-ratio: 1;
+
   border-radius: 0.5rem;
   object-fit: contain;
   margin-bottom: -0.1rem;
+
+  @media screen and (max-width: 28em) {
+    width: 4rem;
+  }
 }
 
 article ul.tools {
@@ -28,15 +38,15 @@ article ul.tools {
 
 article ul.tools img {
   width: 1.5rem;
-  float: right;
   aspect-ratio: 1;
+  float: right;
 }
 
 article .description {
   line-height: 1.3;
 }
 
-@media (width < 40rem) {
+@media screen and (max-width: 33em) {
   article ul.tools {
     flex-direction: column;
   }
@@ -44,5 +54,5 @@ article .description {
 
 ul.index > li {
   clear: left;
-  padding: 1rem 1rem;
+  padding: 0.75rem 0.5rem;
 }

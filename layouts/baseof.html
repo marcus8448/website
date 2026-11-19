@@ -21,7 +21,7 @@
   <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/28928887?size=16" sizes="16x16">
   <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/28928887?size=32" sizes="32x32">
   <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/28928887?size=48" sizes="48x48">
-  <link rel="apple-touch-icon" href="https://avatars.githubusercontent.com/u/28928887?size=192">
+  <link rel="apple-touch-icon" href="https://avatars.githubusercontent.com/u/28928887?size=180" sizes="180x180">
   {{- end -}}
 
   {{- with (templates.Defer (dict "key" "global")) -}}
@@ -33,29 +33,29 @@
   {{- end -}}
 </head>
 <body>
-<a class="a11y-text" href="#main">Skip to content</a>
+<a class="kbd-nav" href="#main">Skip to content</a>
 <div class="container">
   <header class="page-header">
     <div class="heading">
-      <!--      <a href="/" aria-label="Homepage" draggable="false">-->
-      <img src="https://avatars.githubusercontent.com/u/28928887?size=16" alt="marcus8448's Profile Picture"><!--
-      --><hgroup>
+      <a href="{{ .Site.BaseURL }}" aria-label="Homepage" draggable="false">
+        <img src="https://avatars.githubusercontent.com/u/28928887?size=16" alt="marcus8448's Profile Picture" class="avatar"><!--
+      --></a><hgroup>
         <h2 class="title">marcus8448</h2>
         <p class="subtitle">{{ default (.Site.Param "blurb") (.Page.Param "blurb") }}</p>
       </hgroup>
       <!--      </a>-->
     </div>
     <ul class="links">
-      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+<!--      <li><a href="/blog">Blog</a></li>-->
       <li><a href="/projects">Projects</a></li>
-      <!--      <li><a href="/blog">Blog</a></li>-->
       <li><a href="/contact">Contact</a></li>
       <li><a href="https://github.com/marcus8448">GitHub</a></li>
     </ul>
   </header>
   <main id="main">
     {{- block "main" . -}}
-    {{ .Content }}
+    {{- .Content -}}
     {{- end -}}
   </main>
   <footer class="page-footer">

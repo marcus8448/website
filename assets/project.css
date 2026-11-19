@@ -4,16 +4,20 @@ a.badge-link {
   gap: 0.75rem;
   align-items: center;
 
-  border: solid 1px oklch(37.3% .034 259.733);
+  border: solid 1px #364153;
   border-radius: 0.75rem;
   padding: 0.5rem 0.75rem;
   margin: 0.25rem;
-  color: oklch(27.9% .041 260.031);
+  color: #1d293d;
 
   img {
     width: 2rem;
-    height: 2rem;
     aspect-ratio: 1;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    border: solid 1px #99a9c5;
+    color: #bfcbdf;
   }
 }
 

@@ -5,34 +5,37 @@ copyright = 'Copyright &copy; 2022–2026 marcus8448'
 
 [params]
 blurb = "Hello world"
-  [params.author]
-    name = 'marcus8448'
+[params.author]
+name = 'marcus8448'
 
 [build]
-  [build.buildStats]
-    enable = true
+[build.buildStats]
+enable = true
 
 [markup]
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true
-    [markup.goldmark.parser]
-      [markup.goldmark.parser.attribute]
-        block = false
-  [markup.highlight]
-    noClasses = false
-    style = "nord"
-#    lineNos = true
-#    lineNumbersInTable = false
+[markup.goldmark]
+[markup.goldmark.renderer]
+unsafe = true
+[markup.goldmark.parser]
+[markup.goldmark.parser.attribute]
+block = false
+[markup.highlight]
+noClasses = false
+style = "nord"
+#lineNos = true
+#lineNumbersInTable = false
 
 
 [module]
-  [[module.mounts]]
-    source = 'assets'
-    target = 'assets'
+[[module.mounts]]
+source = 'assets'
+target = 'assets'
 
 [outputs]
-  home = ['html']
-  section = ['html']
-  taxonomy = ['html']
-  term = ['html']
+home = ['html']
+section = ['html']
+taxonomy = ['html']
+term = ['html']
+
+[security]
+allowContent = ['! ^text/org$']

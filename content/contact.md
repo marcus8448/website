@@ -1,7 +1,7 @@
 +++
 title = "Contact"
-description = "My contact information"
-blurb = "My contact information"
+description = "Contact information"
+blurb = "Contact information"
 publishDate = "2025-01-01T00:00:00-00:00"
 date = "2025-06-24T00:00:00-00:00"
 +++

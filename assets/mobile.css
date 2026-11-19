@@ -1,19 +1,21 @@
-/* screen width <=52em */
+/* screen width <=46em */
 body {
   background-color: var(--main);
-
-  min-height: 100vh;
-  align-items: start;
+  padding-block: 0.25rem;
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-content: center;
   justify-content: space-between;
-  width: 100%;
   border-radius: 0;
-  padding-top: 0.5rem;
+  padding: 0.5rem;
   height: 100%;
+}
+
+.container > * {
+  grid-column: 1 / -1;
 }
 
 .highlight {
@@ -46,7 +48,7 @@ main {
 }
 
 @media screen and (max-width: 33em) {
-  .page-header .heading img {
+  .page-header .heading .avatar {
     width: 4rem;
   }
 
@@ -56,7 +58,7 @@ main {
 }
 
 @media screen and (max-width: 24em) {
-  .page-header .heading img {
+  .page-header .heading .avatar {
     width: 3.5rem;
   }
 

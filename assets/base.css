@@ -1,4 +1,3 @@
-/* 46em: mobile breakpoint, 40em drop links below, 33em shrink title + image */
 *, *:before, *:after {
   box-sizing: border-box;
 }
@@ -12,128 +11,41 @@ h1, h2, h3, h4, h5, h6, p, span, small, li {
   vertical-align: baseline;
 }
 
-:root {
-  --bg: #7a7c7c;
-  --main: #f2f2f2;
-  --text: #000;
-  --text-hover: #606060;
-  --meta: #4e5665;
-  --fig: #30343c;
-  --l: #0069b4;
-  --lh: #008bd7;
-  --il: #004b93;
-  --ilh: #006bb6;
-  --lt: #e2e5e9;
-
-  color-scheme: light dark;
-
-  @media (prefers-contrast: more) {
-    --meta: oklch(44.6% 0.03 256.802);
-  }
-
-  @media (prefers-color-scheme: dark) {
-    --bg: #17181b;
-    --main: #232529;
-    --text: #f1f1f1;
-    --text-hover: #9e9b9b;
-    --meta: #9098a8;
-    --l: #5096c8;
-    --lh: #3794c6;
-    --lt: #363a40;
-    --fig: #d7d9df;
-  }
+h1 {
+  font-weight: 700;
+  font-size: 2rem;
 }
 
-body {
-  display: grid;
-  max-width: 100vw;
-  min-height: 100vh;
-
-  margin: 0;
-  padding-block: 1rem;
-
-  background-color: var(--bg);
-  color: var(--text);
-
-  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-size: 1rem;
-  tab-size: 4;
-  scroll-behavior: smooth;
-  place-items: center;
-  text-decoration-color: currentColor;
+h2 {
+  font-weight: 600;
+  font-size: 1.5rem;
 }
 
-main:not(:empty) {
-  margin-block: 1rem;
-  border-bottom: 1px dashed var(--text);
+h3 {
+  font-weight: 600;
+  font-size: 1.25rem;
 }
 
-.page-footer {
-  display: grid;
-  place-items: center;
-  margin-top: 1rem;
+h4 {
+  font-weight: 600;
+  font-size: 1.125rem;
 }
 
-.date-meta {
-  color: var(--meta);
+h5 {
+  font-weight: 500;
+  font-size: 1.125rem;
 }
 
-.sub {
-  line-height: 1;
-  font-size: 0.9rem;
+h6 {
+  font-size: 1.125rem;
 }
 
-.container {
-  background-color: var(--main);
-  padding: 1.5rem;
-  width: 100%;
+small {
+  font-size: 0.9em;
 }
 
-hgroup p,
-/*hgroup h1,*/
-hgroup h2 {
-  line-height: 1;
-}
-
-.page-header {
-  display: flex;
-  gap: 0.5rem;
-  padding-bottom: 1rem;
-  justify-content: space-between;
-  border-bottom: 1px dashed var(--text);
-}
-
-.page-header .heading {
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-}
-
-.page-header .heading .avatar {
-  width: 6rem;
-  aspect-ratio: 1;
-  border-radius: 1rem;
-}
-
-.page-header .heading .title {
-  font-size: 4rem;
-  margin: 0;
-}
-
-.page-header .heading .subtitle {
-  font-size: 1rem;
-  text-align: right;
-  text-transform: lowercase;
-}
-
-.page-header .links {
-  display: block;
-  text-transform: lowercase;
-  text-align: right;
-}
-
-.page-header .links li {
-  line-height: calc(12 / 9);
+p, span {
+  line-height: 1.5;
 }
 
 a[href] {
@@ -146,179 +58,12 @@ a[href]:hover {
   color: var(--text-hover);
 }
 
-h1 {
-  font-weight: 700;
-  font-size: 2rem;
-  line-height: 1;
-}
-
-h2 {
-  font-weight: 600;
-  font-size: 1.5rem;
-  line-height: 1.25;
-}
-
-h3 {
-  font-weight: 600;
-  font-size: 1.25rem;
-  line-height: 1.2;
-}
-
-h4 {
-  font-weight: 600;
-  font-size: 1.125rem;
-  line-height: 1.2;
-}
-
-h5 {
-  font-weight: 500;
-  font-size: 1.125rem;
-  line-height: 1.2;
-}
-
-h6 {
-  font-size: 1.125rem;
-  line-height: 1.2;
-}
-
-small {
-  font-size: 0.9em;
-}
-
-p, span {
-  line-height: 1.5;
-}
-
-.content a[href] {
-  text-decoration-line: underline;
-  color: var(--l);
-  padding-inline: 0.05rem;
-}
-
-.content a[href]:hover {
-  color: var(--lh);
-}
-
-.content code {
-  display: inline;
-  box-decoration-break: clone;
-}
-/*.content a[href]:has(code) {*/
-/*  color: var(--cl);*/
-/*}*/
-/*.content a[href]:has(code):hover {*/
-/*  color: var(--clh);*/
-/*}*/
-
-
 ul, ol {
   padding: 0;
   margin: 0;
   list-style: none;
 }
 
-/*noinspection CssOverwrittenProperties*/
-img[src="https://avatars.githubusercontent.com/u/28928887?size=16"],
-link[rel="icon"][href="https://avatars.githubusercontent.com/u/28928887?size=16"]  {
-  image-rendering: -moz-crisp-edges;
-  image-rendering: crisp-edges;
-  image-rendering: pixelated;
-}
-
-.kbd-nav {
-  position: absolute;
-  left: 0.5rem;
-  top: 0.5rem;
-
-  overflow: hidden;
-  opacity: 0;
-}
-
-.kbd-nav:focus {
-  opacity: 1;
-
-  padding: 0.1rem 0.2rem;
-  background-color: var(--main);
-  color: var(--text);
-}
-
-.content h1 {
-  line-height: 1.2;
-  text-wrap: wrap;
-}
-
-.content h2,
-.content h3,
-.content h4,
-.content h5,
-.content h6 {
-  margin-top: 0.75rem;
-  margin-bottom: 0.25rem;
-  text-wrap: wrap;
-}
-
-/*noinspection CssOverwrittenProperties*/
-.content p {
-  line-height: 1.5;
-  margin-bottom: 0.75rem;
-  text-wrap: wrap;
-  text-wrap: pretty;
-}
-
-.content ul,
-.content ol {
-  margin-block: 0.125rem;
-  padding-left: 1rem;
-  list-style-position: outside;
-}
-
-.content ul {
-  list-style-type: disc;
-}
-
-.content ul > li > ul {
-  list-style-type: circle;
-}
-
-.content ol {
-  list-style-type: decimal;
-}
-
-.content ol > li > ol {
-  list-style-type: lower-alpha;
-}
-
-.content li {
-  margin-block: 0.125rem;
-  line-height: 1.5;
-}
-
-.content code:not(.highlight *) {
-  border-radius: 0.25rem;
-  padding: 0 0.2rem 0.025rem 0.2rem;
-
-  background-color: var(--lt);
-  margin-left: -0.2rem;
-}
-
-.content figure {
-  margin: 3rem 0;
-  display: grid;
-  text-align: center;
-  justify-content: center;
-}
-
-.content figure figcaption {
-  margin-bottom: 0.25rem;
-  font-size: smaller;
-  color: var(--fig);
-}
-
-.content figure img {
-  max-width: 100%;
-  width: auto;
-  height: auto;
-  border-radius: 0.5rem;
-  align-self: center;
-  margin-inline: 0.5rem;
+hgroup * {
+  line-height: 1;
 }

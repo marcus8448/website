@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}">
+<html lang="{{ .Site.Language.Locale }}">
 <head>
   <meta charset="utf-8">
-  <meta name="theme-color" content="#f0f5f0"/>
+  <meta name="theme-color" content="#f2f2f2" media="(prefers-color-scheme: light)"/>
+  <meta name="theme-color" content="#232529" media="(prefers-color-scheme: dark)"/>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="{{ .Description }}"/>
-  <meta name="author" content="marcus8448"/>
+  <meta name="author" content="{{ .Site.Title }}"/>
 
   {{- if .Title -}}
   <title>{{ .Title | plainify }} | {{ .Site.Title }}</title>
@@ -25,9 +26,8 @@
   {{- end -}}
 
   {{- with (templates.Defer (dict "key" "global")) -}}
-  {{- partial "css.html" "base.css" "base.css" -}}
+  {{- partial "css-bundle.html" (dict "files" (slice "vars.css" "base.css" "layout.css" "content.css" "util.css") "name" "css/bundle.css" ) -}}
   {{- partial "mobile-css.html" "mobile.css" "mobile.css" -}}
-  {{- partial "desktop-css.html" "desktop.css" "desktop.css" -}}
   {{- end -}}
   {{- block "css" . -}}
   {{- end -}}
@@ -40,7 +40,7 @@
       <a href="{{ .Site.BaseURL }}" aria-label="Homepage" draggable="false">
         <img src="https://avatars.githubusercontent.com/u/28928887?size=16" alt="marcus8448's Profile Picture" class="avatar"><!--
       --></a><hgroup>
-        <h2 class="title">marcus8448</h2>
+        <h2 class="title">{{ .Site.Title }}</h2>
         <p class="subtitle">{{ default (.Site.Param "blurb") (.Page.Param "blurb") }}</p>
       </hgroup>
       <!--      </a>-->

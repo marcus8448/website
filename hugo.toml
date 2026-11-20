@@ -1,5 +1,5 @@
 baseURL = 'https://mlow.dev/'
-languageCode = 'en-ca'
+locale = 'en-ca'
 title = 'marcus8448'
 copyright = 'Copyright &copy; 2022–2026 marcus8448'
 

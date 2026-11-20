@@ -4,7 +4,7 @@
   {{ with .Site.GetPage .Section }}
   {{ range .RegularPagesRecursive }}
   <li>
-    <article class="{{ .Section | strings.ToLower }}">
+    <article class="blurb {{ .Section | strings.ToLower }}">
       <header>
         {{ if .Params.icon }}
         <a href="{{ .RelPermalink }}" class="icon">
@@ -24,12 +24,14 @@
         </ul>
         {{ end }}
 
-        <h2><a href="{{ .RelPermalink }}">{{ .Title | safeHTML }}</a></h2>
-        {{- if .Params.timeframe -}}
-        <p class="date-meta sub">{{ (replace .Params.timeframe "-" "&#8209;") | safeHTML }}</p>
-        {{- else -}}
-        <p class="date-meta"><time datetime='{{ .PublishDate | time.Format "2006-01-02" }}'>{{ .PublishDate | time.Format ":date_medium" }}</time></p>
-        {{- end -}}
+        <header>
+          <h2><a href="{{ .RelPermalink }}">{{ .Title | safeHTML }}</a></h2>
+          {{- if .Params.timeframe -}}
+          <p class="date-meta sub">{{ (replace .Params.timeframe "-" "&#8209;") | safeHTML }}</p>
+          {{- else -}}
+          <p class="date-meta"><time datetime='{{ .PublishDate | time.Format "2006-01-02" }}'>{{ .PublishDate | time.Format ":date_medium" }}</time></p>
+          {{- end -}}
+        </header>
       </header>
       <p class="description">{{ .Params.Description | safeHTML }}</p>
     </article>

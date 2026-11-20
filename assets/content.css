@@ -1,0 +1,107 @@
+.content h1 {
+  line-height: 1.2;
+}
+
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6 {
+  margin-top: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+
+.content h2 {
+  line-height: 1.25;
+}
+
+.content h3 {
+  line-height: 1.2;
+}
+
+.content h4,
+.content h5,
+.content h6 {
+  line-height: 1.2;
+}
+
+/*noinspection CssOverwrittenProperties*/
+.content p {
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+  text-wrap: wrap;
+  text-wrap: pretty;
+}
+
+.content a[href] {
+  text-decoration-line: underline;
+  color: var(--l);
+  padding-inline: 0.05rem;
+}
+
+.content a[href]:hover {
+  color: var(--lh);
+}
+
+.content ul,
+.content ol {
+  margin-block: 0.125rem;
+  padding-left: 1rem;
+  list-style-position: outside;
+}
+
+.content ul {
+  list-style-type: disc;
+}
+
+.content ul > li > ul {
+  list-style-type: circle;
+}
+
+.content ol {
+  list-style-type: decimal;
+}
+
+.content ol > li > ol {
+  list-style-type: lower-alpha;
+}
+
+.content li {
+  margin-block: 0.125rem;
+  line-height: 1.5;
+}
+
+.content code {
+  display: inline;
+  box-decoration-break: clone;
+}
+
+.content code:not(.highlight *) {
+  border-radius: 0.25rem;
+  padding: 0 0.2rem 0.025rem 0.2rem;
+
+  background-color: var(--lt);
+  margin-left: -0.2rem;
+}
+
+.content figure {
+  margin: 3rem 0;
+  display: grid;
+  text-align: center;
+  justify-content: center;
+}
+
+.content figure figcaption {
+  margin-bottom: 0.25rem;
+  font-size: smaller;
+  color: var(--fig);
+}
+
+.content figure img {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  border-radius: 0.5rem;
+  align-self: center;
+  margin-inline: 0.5rem;
+}

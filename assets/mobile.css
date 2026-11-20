@@ -5,34 +5,25 @@ body {
 }
 
 .container {
-  display: grid;
-  grid-template-columns: 1fr;
-  align-content: center;
-  justify-content: space-between;
-  border-radius: 0;
+  display: block;
   padding: 0.5rem;
   height: 100%;
-}
 
-.container > * {
-  grid-column: 1 / -1;
+  max-width: unset;
+  border-radius: 0;
 }
 
 .highlight {
   width: calc(100%);
 }
 
-main {
-  height: 100%;
-}
-
-@media screen and (min-width: 40em) {
+@media screen and (min-width: 38em) {
   .page-header .links {
     margin-right: 0.5rem;
   }
 }
 
-@media screen and (max-width: 40em) {
+@media screen and (max-width: 38em) {
   .page-header {
     display: block;
   }
@@ -44,6 +35,7 @@ main {
 
     padding-inline: clamp(0.5rem, 5vw, 2rem);
     padding-top: 0.25rem;
+    gap: 1.5rem;
   }
 }
 

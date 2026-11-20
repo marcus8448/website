@@ -1,0 +1,20 @@
+{{- if hugo.IsProduction -}}
+  {{- $css := slice -}}
+
+  {{- range .files -}}
+    {{- with resources.Get . -}}
+      {{- $css = $css | append . -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- $styles := $css | resources.Concat .name -}}
+  {{- with $styles | minify | fingerprint -}}
+    <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+  {{- end -}}
+{{- else -}}
+  {{- range .files -}}
+    {{- with resources.Get . -}}
+      <link rel="stylesheet" href="{{.RelPermalink }}">
+    {{- end -}}
+  {{- end -}}
+{{- end -}}

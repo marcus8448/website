@@ -1,0 +1,31 @@
+:root {
+  --bg: #7a7c7c;
+  --main: #f2f2f2;
+  --text: #000;
+  --text-hover: #606060;
+  --meta: #4e5665;
+  --fig: #30343c;
+  --l: #0069b4;
+  --lh: #008bd7;
+  --il: #004b93;
+  --ilh: #006bb6;
+  --lt: #e2e5e9;
+
+  color-scheme: light dark;
+
+  @media (prefers-contrast: more) {
+    --meta: oklch(44.6% 0.03 256.802);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    --bg: #17181b;
+    --main: #232529;
+    --text: #f1f1f1;
+    --text-hover: #9e9b9b;
+    --meta: #9098a8;
+    --l: #5096c8;
+    --lh: #3794c6;
+    --lt: #363a40;
+    --fig: #d7d9df;
+  }
+}

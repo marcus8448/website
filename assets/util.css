@@ -1,0 +1,22 @@
+.date-meta {
+  color: var(--meta);
+}
+
+.sub {
+  line-height: 1;
+  font-size: 0.9rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .invert-dark {
+    filter: invert(1);
+  }
+}
+
+/*noinspection CssOverwrittenProperties*/
+img[src="https://avatars.githubusercontent.com/u/28928887?size=16"],
+link[rel="icon"][href="https://avatars.githubusercontent.com/u/28928887?size=16"]  {
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+}

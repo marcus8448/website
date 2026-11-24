@@ -1,0 +1,9 @@
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ .context.Site.Title }}">
+{{- if .og.title }}
+<meta property="og:title" content="{{ .og.title }}">
+{{- end -}}
+{{- if .og.description -}}
+<meta property="og:description" content="{{ .description }}">
+{{- end -}}
+<meta property="og:url" content="{{ .context.Permalink }}">

@@ -2,32 +2,28 @@
 <html lang="{{ .Site.Language.Locale }}">
 <head>
   <meta charset="utf-8">
-  <meta name="theme-color" content="#f2f2f2" media="(prefers-color-scheme: light)"/>
-  <meta name="theme-color" content="#232529" media="(prefers-color-scheme: dark)"/>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f1f1f1" media="prefers-color-scheme: light"/>
+  <meta name="theme-color" content="#232529" media="prefers-color-scheme: dark"/>
+
+  <meta name="author" content='{{ .Param "author" }}'/>
   <meta name="description" content="{{ .Description }}"/>
-  <meta name="author" content="{{ .Site.Title }}"/>
 
   {{- if .Title -}}
   <title>{{ .Title | plainify }} | {{ .Site.Title }}</title>
-  <meta property="og:title" content="{{ .Title }}">
+  {{- else -}}
+  <title>{{ .Site.Title }}</title>
   {{- end -}}
-  {{- if .Description -}}
-  <meta property="og:description" content="{{ .Description }}">
-  {{- end -}}
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="{{ .Permalink }}">
+  {{- partial "opengraph.html" (dict "og" (.Param "opengraph" | default dict) "context" .) -}}
 
-  {{- block "icons" . -}}
   <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/28928887?size=16" sizes="16x16">
   <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/28928887?size=32" sizes="32x32">
   <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/28928887?size=48" sizes="48x48">
   <link rel="apple-touch-icon" href="https://avatars.githubusercontent.com/u/28928887?size=180" sizes="180x180">
-  {{- end -}}
 
   {{- with (templates.Defer (dict "key" "global")) -}}
   {{- partial "css-bundle.html" (dict "files" (slice "vars.css" "base.css" "layout.css" "content.css" "util.css") "name" "css/bundle.css" ) -}}
-  {{- partial "mobile-css.html" "mobile.css" "mobile.css" -}}
+  {{- partial "mobile-css.html" "mobile.css" -}}
   {{- end -}}
   {{- block "css" . -}}
   {{- end -}}
@@ -43,7 +39,6 @@
         <h2 class="title">{{ .Site.Title }}</h2>
         <p class="subtitle">{{ default (.Site.Param "blurb") (.Page.Param "blurb") }}</p>
       </hgroup>
-      <!--      </a>-->
     </div>
     <ul class="links">
       <li><a href="/about">About</a></li>
